@@ -9,15 +9,25 @@ public class ShowdownApp {
         System.out.println("Battle begins!");
 
         while (hero.getHealth() > 0 && villain.getHealth() > 0) {
+
             hero.attack(villain);
 
             System.out.println(hero.getName() + " attacks " + villain.getName());
             System.out.println(villain.getName() + " health: " + villain.getHealth());
 
+            if (villain.getHealth() <= 0) {
+                break;
+            }
+
             villain.attack(hero);
 
             System.out.println(villain.getName() + " attacks " + hero.getName());
             System.out.println(hero.getName() + " health: " + hero.getHealth());
+        }
+        if (hero.getHealth() > 0) {
+            System.out.println(hero.getName() + " wins the showdown!");
+        } else {
+            System.out.println(villain.getName() + " wins the showdown!");
         }
     }
 }
