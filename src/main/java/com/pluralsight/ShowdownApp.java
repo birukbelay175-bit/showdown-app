@@ -13,6 +13,11 @@ public class ShowdownApp {
 
             System.out.println(hero.getName() + " attacks " + villain.getName());
             System.out.println(villain.getName() + " health: " + villain.getHealth());
+
+            villain.attack(hero);
+
+            System.out.println(villain.getName() + " attacks " + hero.getName());
+            System.out.println(hero.getName() + " health: " + hero.getHealth());
         }
     }
 }
